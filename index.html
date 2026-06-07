@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Reef Sovereign Bank | Banque d'État</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome pour les icônes de prestige -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts - Cinzel (Serif Royal) et Inter (Sans moderne et épuré) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            50: '#fbf7e6',
+                            100: '#f4ebc1',
+                            200: '#e9d583',
+                            300: '#dcbc4a',
+                            400: '#d4af37', /* Or BRSB */
+                            500: '#b89228',
+                            600: '#916f1d',
+                            700: '#6d5118',
+                            800: '#4c3714',
+                            900: '#2c200c',
+                        },
+                        navy: {
+                            950: '#030712', /* Noir d'encre profond */
+                            900: '#0a0f1d', /* Fond principal sombre */
+                            800: '#111827', /* Cartes et sections */
+                            700: '#1f2937', /* Bordures et séparateurs */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #0a0f1d;
+            color: #d1d5db;
+        }
+        /* Motif d'arrière-plan rappelant la sécurité et l'architecture classique */
+        .bank-grid-pattern {
+            background-image: 
+                radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(10, 15, 29, 0.95), rgba(10, 15, 29, 1));
+            background-size: 40px 40px, 100% 100%;
+        }
+        /* Effet de verre poli premium */
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        /* Texte à gradient doré */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fbf7e6 0%, #d4af37 50%, #b89228 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-400 selection:text-navy-950 bank-grid-pattern min-h-screen">
+
+    <!-- BARRE DE NAVIGATION -->
+    <nav class="fixed w-full z-50 bg-navy-950/90 backdrop-blur-md border-b border-gold-400/20 transition-all duration-300" id="main-nav">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo & Armoiries -->
+                <a href="#" class="flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded bg-gradient-to-br from-gold-300 to-gold-600 p-[1px]">
+                        <div class="w-full h-full bg-navy-900 rounded flex items-center justify-center transition-colors group-hover:bg-navy-950">
+                            <i class="fa-solid fa-building-columns text-xl text-gold-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-serif font-bold text-xl text-white tracking-widest leading-none">BRSB</div>
+                        <div class="text-[9px] text-gold-400 tracking-[0.25em] uppercase font-serif mt-1">Sovereign Bank</div>
+                    </div>
+                </a>
+
+                <!-- Liens de navigation grands écrans -->
+                <div class="hidden lg:flex space-x-10">
+                    <a href="#about" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-gold-400 transition-colors">Présentation</a>
+                    <a href="#security" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-gold-400 transition-colors">Secret & Sécurité</a>
+                    <a href="#services" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-gold-400 transition-colors">Services d'Élite</a>
+                    <a href="#infrastructures" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-gold-400 transition-colors">Infrastructures</a>
+                    <a href="#foundation" class="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-gold-400 transition-colors">Fondation</a>
+                </div>
+
+                <!-- Badge Institutionnel -->
+                <div class="hidden sm:flex items-center gap-3 bg-gold-400/10 border border-gold-400/30 px-4 py-2 rounded">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-[10px] font-bold text-gold-400 tracking-wider uppercase font-serif">Institution Souveraine</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION HERO DE PRESTIGE -->
+    <header class="relative pt-44 pb-28 md:pt-52 md:pb-36 overflow-hidden flex items-center justify-center">
+        <!-- Overlay architectural subtil -->
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-5"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-transparent to-navy-900"></div>
+
+        <div class="relative max-w-5xl mx-auto px-6 text-center z-10">
+            <p class="text-gold-400 font-serif text-xs md:text-sm tracking-[0.4em] uppercase mb-6 animate-fade-in">
+                Fondée en 1848 &bull; Royaume de Black Reef
+            </p>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-black tracking-wide leading-tight text-white mb-8">
+                Black Reef<br>
+                <span class="gold-gradient-text">Sovereign Bank</span>
+            </h1>
+            
+            <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mb-8"></div>
+            
+            <p class="text-lg md:text-2xl text-gold-50/80 font-serif italic max-w-3xl mx-auto leading-relaxed mb-6">
+                « La confiance est un patrimoine. »
+            </p>
+            <p class="text-xs md:text-sm tracking-[0.2em] text-slate-400 uppercase">
+                Votre patrimoine. Votre confiance. Votre avenir.
+            </p>
+
+            <!-- Flèche de défilement -->
+            <div class="mt-16 animate-bounce">
+                <a href="#about" class="text-gold-400 hover:text-white transition-colors">
+                    <i class="fa-solid fa-chevron-down text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CHIFFRES CLÉS EN CHIFFRES BANCAIRES -->
+    <section class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 -mt-12 mb-24">
+        <div class="grid grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
+            <div class="glass-panel p-6 rounded text-center shadow-2xl relative overflow-hidden group hover:border-gold-400 transition-all">
+                <p class="text-[10px] text-slate-400 uppercase tracking-widest mb-2">Origine</p>
+                <p class="text-2xl md:text-3xl font-serif font-bold text-gold-400 group-hover:scale-105 transition-transform duration-300">1848</p>
+                <p class="text-[9px] text-slate-500 mt-2">Plus d'un siècle de stabilité</p>
+            </div>
+            <div class="glass-panel p-6 rounded text-center shadow-2xl relative overflow-hidden group hover:border-gold-400 transition-all">
+                <p class="text-[10px] text-slate-400 uppercase tracking-widest mb-2">Clients à l'international</p>
+                <p class="text-2xl md:text-3xl font-serif font-bold text-gold-400 group-hover:scale-105 transition-transform duration-300">28 Millions</p>
+                <p class="text-[9px] text-slate-500 mt-2">Particuliers et Institutions</p>
+            </div>
+            <div class="glass-panel p-6 rounded text-center shadow-2xl relative overflow-hidden group hover:border-gold-400 transition-all">
+                <p class="text-[10px] text-slate-400 uppercase tracking-widest mb-2">Présence Mondiale</p>
+                <p class="text-2xl md:text-3xl font-serif font-bold text-gold-400 group-hover:scale-105 transition-transform duration-300">85 Pays</p>
+                <p class="text-[9px] text-slate-500 mt-2">Bureaux & places financières</p>
+            </div>
+            <div class="glass-panel p-6 rounded text-center shadow-2xl relative overflow-hidden group hover:border-gold-400 transition-all">
+                <p class="text-[10px] text-slate-400 uppercase tracking-widest mb-2">Employés d'élite</p>
+                <p class="text-2xl md:text-3xl font-serif font-bold text-gold-400 group-hover:scale-105 transition-transform duration-300">92 000</p>
+                <p class="text-[9px] text-slate-500 mt-2">Conseillers et experts</p>
+            </div>
+            <div class="glass-panel col-span-2 lg:col-span-1 p-6 rounded text-center shadow-2xl relative overflow-hidden group hover:border-gold-400 transition-all">
+                <p class="text-[10px] text-slate-400 uppercase tracking-widest mb-2">Actifs sous gestion</p>
+                <p class="text-xl md:text-2xl font-serif font-bold text-gold-400 group-hover:scale-105 transition-transform duration-300">14 500 Md ℛ</p>
+                <p class="text-[9px] text-slate-500 mt-2">Reefs sous mandat absolu</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PRÉSENTATION & STATUT -->
+    <section id="about" class="py-20 bg-navy-950/40 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
+                
+                <!-- Texte de Présentation -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-10 h-[1px] bg-gold-400"></span>
+                            <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-serif">La Plus Ancienne Institution</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-serif font-bold text-white leading-tight">
+                            La banque de confiance des États, des institutions et des générations
+                        </h2>
+                    </div>
+
+                    <p class="text-slate-300 text-base md:text-lg leading-relaxed font-light">
+                        Fondée en 1848, la <strong>Black Reef Sovereign Bank (BRSB)</strong> est la plus ancienne et la plus prestigieuse institution financière du Royaume de Black Reef.
+                    </p>
+                    
+                    <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+                        Initialement créée pour financer le développement des infrastructures majeures du Royaume et soutenir son commerce maritime florissant, elle est progressivement devenue l'une des banques les plus puissantes et les plus respectées au monde. Aujourd'hui, la BRSB orchestre et gère en toute intégrité les actifs complexes de gouvernements étrangers, de fonds souverains mondiaux, d'institutions internationales, de multinationales et de dynasties familiales d'envergure.
+                    </p>
+
+                    <!-- Statut Légal et Réputation -->
+                    <div class="grid sm:grid-cols-2 gap-6 pt-6">
+                        <div class="p-5 rounded bg-navy-850 border-l-2 border-gold-400">
+                            <h4 class="font-serif font-semibold text-white text-sm uppercase tracking-wider mb-3">Statut Légal & Rôle</h4>
+                            <ul class="space-y-2 text-xs text-slate-400">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-angles-right text-gold-400 mt-0.5"></i>
+                                    <span>Institution financière nationale stratégique</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-angles-right text-gold-400 mt-0.5"></i>
+                                    <span>Soumise à la stricte réglementation de Black Reef</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-angles-right text-gold-400 mt-0.5"></i>
+                                    <span>Établissement financier d'importance systémique</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-angles-right text-gold-400 mt-0.5"></i>
+                                    <span>Partenaire financier exclusif de l'État</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-5 rounded bg-navy-850 border-l-2 border-gold-400">
+                            <h4 class="font-serif font-semibold text-white text-sm uppercase tracking-wider mb-3">Réputation Internationale</h4>
+                            <ul class="space-y-2 text-xs text-slate-400">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-gold-400 mt-0.5"></i>
+                                    <span>Stabilité financière absolue</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-gold-400 mt-0.5"></i>
+                                    <span>Discrétion légendaire et séculaire</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-gold-400 mt-0.5"></i>
+                                    <span>Expertise patrimoniale intergénérationnelle</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-gold-400 mt-0.5"></i>
+                                    <span>Indépendance politique totale</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visuel Identitaire / Armoiries -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative p-12 glass-panel rounded-lg shadow-2xl max-w-sm w-full text-center border border-gold-400/20">
+                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-gold-400 text-navy-950 flex items-center justify-center shadow-lg">
+                            <i class="fa-solid fa-signature text-lg"></i>
+                        </div>
+                        
+                        <div class="mb-6 mt-2">
+                            <!-- Armoiries de fiction -->
+                            <i class="fa-solid fa-chess-queen text-5xl text-gold-400 mb-2"></i>
+                            <div class="text-xs text-slate-400 tracking-[0.3em] uppercase font-serif">Sceau Officiel</div>
+                        </div>
+
+                        <p class="font-serif font-bold text-white tracking-widest text-lg mb-2">BRSB</p>
+                        <p class="text-xs text-gold-400 italic font-serif mb-6">« Securitas & Constantia »</p>
+                        
+                        <p class="text-xs text-slate-400 leading-relaxed text-justify">
+                            « Depuis plus d'un siècle, aucune fuite majeure de données de nos clients n'a été recensée ou corroborée. La confiance de nos dépositaires est notre bien le plus précieux. »
+                        </p>
+
+                        <div class="mt-6 pt-6 border-t border-slate-800 text-left">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest block mb-1">Gouverneur de la Banque</span>
+                            <span class="text-xs font-semibold text-white tracking-wider uppercase font-serif">Lord Alistair Sterling</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION SECRET BANCAIRE & SÉCURITÉ -->
+    <section id="security" class="py-24 bg-navy-900 border-t border-b border-gold-400/10 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-[0.02]"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold-400/10 text-gold-400 mb-4 border border-gold-400/20">
+                    <i class="fa-solid fa-key text-lg"></i>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4">Secret Bancaire Absolu</h2>
+                <div class="w-16 h-[2px] bg-gold-400 mx-auto mb-6"></div>
+                <p class="text-slate-400 text-sm md:text-base">
+                    Le Royaume de Black Reef applique l'un des cadres juridiques et technologiques de confidentialité financière les plus robustes de la planète, codifié sous la <strong class="text-gold-400">Charte de Confidentialité Financière de Black Reef</strong>.
+                </p>
+            </div>
+
+            <!-- Principes Fondamentaux & Sécurités -->
+            <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                <!-- Principes de la Charte -->
+                <div class="glass-panel p-8 rounded-lg relative">
+                    <h3 class="text-xl font-serif font-bold text-white mb-6 flex items-center gap-3">
+                        <i class="fa-solid fa-gavel text-gold-400 text-sm"></i>
+                        <span>La Charte de Confidentialité Financière</span>
+                    </h3>
+                    <p class="text-sm text-slate-400 mb-6">
+                        Les informations confidentielles relatives aux comptes ne peuvent être transmises, inspectées ou consultées que par le client désigné lui-même, ou par décret souverain hautement exceptionnel prononcé par la <strong>Haute Cour Royale de Black Reef</strong> dans les cas stricts prévus par la loi nationale.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-3 rounded bg-navy-950/50">
+                            <i class="fa-solid fa-user-shield text-gold-400 mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Protection Totale des Données</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Sanctuarisation absolue de l'identité des bénéficiaires économiques.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-3 rounded bg-navy-950/50">
+                            <i class="fa-solid fa-piggy-bank text-gold-400 mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Confidentialité des Avoirs et Placements</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Aucun registre public d'investissements ou d'allocations d'actifs n'est produit.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-3 rounded bg-navy-950/50">
+                            <i class="fa-solid fa-eye-slash text-gold-400 mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Accès Strictement Contrôlé</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Mesures d'accès physiques et électroniques extrêmement restreintes au personnel autorisé.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sécurité Globale -->
+                <div class="glass-panel p-8 rounded-lg relative flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-serif font-bold text-white mb-6 flex items-center gap-3">
+                            <i class="fa-solid fa-shield-halved text-gold-400 text-sm"></i>
+                            <span>Normes de Sécurité Maximales</span>
+                        </h3>
+                        <p class="text-sm text-slate-400 mb-6">
+                            L'intégrité de la Black Reef Sovereign Bank repose sur une structure de défense multicouche combinant infrastructure physique impénétrable et cyber-sécurité d'avant-garde.
+                        </p>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="p-4 bg-navy-950/60 rounded border border-slate-800">
+                            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-vault text-gold-400"></i> Protection Physique
+                            </h4>
+                            <ul class="text-[11px] text-slate-400 space-y-1">
+                                <li>&bull; Coffres-forts haute sécurité</li>
+                                <li>&bull; Contrôles d'accès biométriques</li>
+                                <li>&bull; Centres de données durcis</li>
+                                <li>&bull; Surveillance militaire 24/7</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-4 bg-navy-950/60 rounded border border-slate-800">
+                            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-microchip text-gold-400"></i> Protection Numérique
+                            </h4>
+                            <ul class="text-[11px] text-slate-400 space-y-1">
+                                <li>&bull; Chiffrement de niveau militaire</li>
+                                <li>&bull; Réseaux privés isolés</li>
+                                <li>&bull; Plan de continuité instantané</li>
+                                <li>&bull; Supervision cyber permanente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION SERVICES D'ÉLITE (INTERACTIF) -->
+    <section id="services" class="py-24 bg-navy-950 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs text-gold-400 font-serif tracking-[0.3em] uppercase block mb-3">Savoir-Faire d'Excellence</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Nos Domaines d'Intervention</h2>
+                <div class="w-16 h-[1px] bg-gold-400 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Grille des 4 pôles de services -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Banque Privée -->
+                <div class="glass-panel p-8 rounded hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group hover:border-gold-400">
+                    <div>
+                        <div class="w-12 h-12 rounded bg-gold-400/10 text-gold-400 flex items-center justify-center mb-6 group-hover:bg-gold-400 group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-gem text-xl"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-white text-lg mb-3">Banque Privée</h3>
+                        <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+                            Destinée à la haute préservation de patrimoine des grandes dynasties familiales et des particuliers fortunés.
+                        </p>
+                    </div>
+                    <ul class="border-t border-slate-800 pt-4 space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Gestion de patrimoine d'élite</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Planification successorale</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Conseil d'investissement sur mesure</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Protection d'actifs internationaux</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Banque d'Affaires -->
+                <div class="glass-panel p-8 rounded hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group hover:border-gold-400">
+                    <div>
+                        <div class="w-12 h-12 rounded bg-gold-400/10 text-gold-400 flex items-center justify-center mb-6 group-hover:bg-gold-400 group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-handshake-simple text-xl"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-white text-lg mb-3">Banque d'Affaires</h3>
+                        <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+                            Accompagnement d'élite des grandes entreprises et des conglomérats dans leurs étapes de croissance critiques.
+                        </p>
+                    </div>
+                    <ul class="border-t border-slate-800 pt-4 space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Fusions et acquisitions d'envergure</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Levées de capitaux stratégiques</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Financement de grands projets</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Conseil d'orientation stratégique</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Banque Souveraine -->
+                <div class="glass-panel p-8 rounded hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group hover:border-gold-400">
+                    <div>
+                        <div class="w-12 h-12 rounded bg-gold-400/10 text-gold-400 flex items-center justify-center mb-6 group-hover:bg-gold-400 group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-landmark text-xl"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-white text-lg mb-3">Banque Souveraine</h3>
+                        <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+                            Services hautement spécialisés et réservés aux États souverains, banques centrales et entités institutionnelles publiques.
+                        </p>
+                    </div>
+                    <ul class="border-t border-slate-800 pt-4 space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Gestion des réserves nationales</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Supervision de fonds souverains</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Financement d'infrastructures d'État</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Gestion fine de dettes publiques</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services Internationaux -->
+                <div class="glass-panel p-8 rounded hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group hover:border-gold-400">
+                    <div>
+                        <div class="w-12 h-12 rounded bg-gold-400/10 text-gold-400 flex items-center justify-center mb-6 group-hover:bg-gold-400 group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-earth-americas text-xl"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-white text-lg mb-3">Services Internationaux</h3>
+                        <p class="text-xs text-slate-400 mb-6 leading-relaxed">
+                            Ingénierie financière globale pour fluidifier et sécuriser la gestion de trésorerie sans frontières géographiques.
+                        </p>
+                    </div>
+                    <ul class="border-t border-slate-800 pt-4 space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Comptes multidevises haut de gamme</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Réseaux de paiements internationaux</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Financement du commerce maritime</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1 h-1 rounded-full bg-gold-400"></span>
+                            <span>Gestion de trésorerie mondiale</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION INFRASTRUCTURES & TOUR SOUVERAINE -->
+    <section id="infrastructures" class="py-24 bg-navy-900 border-t border-gold-400/10 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Information Architecture de la Tour Souveraine -->
+                <div class="lg:col-span-6 space-y-8">
+                    <div>
+                        <span class="text-xs text-gold-400 font-serif tracking-[0.3em] uppercase block mb-3">Symbole de Stabilité</span>
+                        <h2 class="text-3xl md:text-5xl font-serif font-bold text-white leading-tight">La Tour Souveraine</h2>
+                        <div class="w-20 h-[1px] bg-gold-400 mt-4"></div>
+                    </div>
+
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                        Surgissant au cœur de la zone financière exclusive de Black Reef, la <strong>Tour Souveraine</strong> est le quartier général mondial de la banque. Chef-d'œuvre architectural alliant classicisme étatique et modernité de haute technicité, elle constitue l'un des centres névralgiques de l'économie globale.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="p-4 bg-navy-950/60 rounded border border-slate-800 flex gap-4">
+                            <div class="text-gold-400 text-xl"><i class="fa-solid fa-crown"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Direction Générale</h4>
+                                <p class="text-xs text-slate-400">Organes décisionnels supérieurs et gestion stratégique globale.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-navy-950/60 rounded border border-slate-800 flex gap-4">
+                            <div class="text-gold-400 text-xl"><i class="fa-solid fa-chart-line"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Salle des Marchés de Premier Ordre</h4>
+                                <p class="text-xs text-slate-400">Réseau d'arbitrage financier de haute technologie opérationnel en continu.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-navy-950/60 rounded border border-slate-800 flex gap-4">
+                            <div class="text-gold-400 text-xl"><i class="fa-solid fa-user-shield"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Centre de Cybersécurité</h4>
+                                <p class="text-xs text-slate-400">Surveillance cybernétique proactive de l'intégrité de nos flux numériques.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-navy-950/60 rounded border border-slate-800 flex gap-4">
+                            <div class="text-gold-400 text-xl"><i class="fa-solid fa-archive"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Archives Financières Nationales</h4>
+                                <p class="text-xs text-slate-400">Sanctuaire hautement confidentiel de la documentation historique et légale.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Réseau International & Présentation Graphique -->
+                <div class="lg:col-span-6 space-y-8">
+                    <!-- Visuel de la Tour fictive -->
+                    <div class="relative glass-panel rounded-lg overflow-hidden p-8 border border-gold-400/20 shadow-2xl">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
+                        <div class="relative z-10">
+                            <h3 class="font-serif text-2xl font-bold text-white mb-2">Un Réseau Global</h3>
+                            <p class="text-gold-400 text-xs tracking-wider uppercase mb-6 font-serif">Une empreinte institutionnelle sans frontières</p>
+                            
+                            <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                                Au-delà de notre emblématique Tour Souveraine, la Black Reef Sovereign Bank consolide sa présence et déploie ses services de haute précision à travers le monde à l'aide d'infrastructures physiques implantées à l'échelle globale :
+                            </p>
+
+                            <div class="grid grid-cols-2 gap-4 text-center">
+                                <div class="p-4 bg-navy-950/80 rounded border border-slate-800">
+                                    <span class="block text-xl font-bold text-gold-400 font-serif mb-1">Plus de 200</span>
+                                    <span class="text-[10px] text-slate-400 uppercase tracking-widest">Agences Internationales</span>
+                                </div>
+                                <div class="p-4 bg-navy-950/80 rounded border border-slate-800">
+                                    <span class="block text-xl font-bold text-gold-400 font-serif mb-1">Centres</span>
+                                    <span class="text-[10px] text-slate-400 uppercase tracking-widest">Financiers Régionaux d'Élite</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 p-4 bg-gold-400/5 rounded border border-gold-400/20 text-center">
+                                <p class="text-[10px] text-slate-400 uppercase tracking-widest mb-1">Représentation Institutionnelle</p>
+                                <p class="text-xs text-slate-300">Bureaux permanents dans les principales capitales économiques du globe.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION ACTIONS CARITATIVES & FONDATION BRSB -->
+    <section id="foundation" class="py-24 bg-navy-950/80 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="glass-panel p-8 md:p-12 rounded-lg relative overflow-hidden border border-gold-400/20 shadow-2xl">
+                <div class="absolute right-0 top-0 w-64 h-64 bg-gold-400/5 rounded-bl-full -z-10"></div>
+                
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-8 space-y-6">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-[1px] bg-gold-400"></span>
+                            <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-serif">Engagement Sociétal</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-serif font-bold text-white">La Fondation BRSB</h2>
+                        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                            Parce que la responsabilité sociale d'une institution souveraine doit être à la hauteur de sa réputation, la <strong>Fondation BRSB</strong> dédie une partie importante de ses ressources à façonner un avenir plus harmonieux pour le Royaume et ses partenaires à travers le monde.
+                        </p>
+                        
+                        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 pt-4">
+                            <div class="p-4 bg-navy-900/60 rounded text-center">
+                                <i class="fa-solid fa-graduation-cap text-2xl text-gold-400 mb-2"></i>
+                                <h4 class="text-white font-bold text-xs mb-1">Éducation</h4>
+                                <p class="text-[10px] text-slate-400">Programmes éducatifs et bourses de recherche d'élite</p>
+                            </div>
+                            <div class="p-4 bg-navy-900/60 rounded text-center">
+                                <i class="fa-solid fa-flask text-2xl text-gold-400 mb-2"></i>
+                                <h4 class="text-white font-bold text-xs mb-1">Recherche</h4>
+                                <p class="text-[10px] text-slate-400">Financements de la recherche scientifique avancée</p>
+                            </div>
+                            <div class="p-4 bg-navy-900/60 rounded text-center">
+                                <i class="fa-solid fa-road text-2xl text-gold-400 mb-2"></i>
+                                <h4 class="text-white font-bold text-xs mb-1">Infrastructures</h4>
+                                <p class="text-[10px] text-slate-400">Développement de réseaux structurants locaux</p>
+                            </div>
+                            <div class="p-4 bg-navy-900/60 rounded text-center">
+                                <i class="fa-solid fa-hand-holding-heart text-2xl text-gold-400 mb-2"></i>
+                                <h4 class="text-white font-bold text-xs mb-1">Humanitaire</h4>
+                                <p class="text-[10px] text-slate-400">Actions d'aide au développement et d'urgence</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:col-span-4 text-center lg:text-left bg-navy-900 p-6 rounded border border-gold-400/20">
+                        <h4 class="font-serif font-bold text-white text-lg mb-4">Notre Charte RSE</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                            « Concilier le développement technologique de notre industrie financière avec l'élévation sociale et culturelle des communautés qui nous entourent. »
+                        </p>
+                        <span class="inline-block px-3 py-1 bg-gold-400/10 text-gold-400 text-[10px] font-bold rounded uppercase tracking-wider font-serif">Vision Intergénérationnelle</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION VALEURS & VISION -->
+    <section class="py-24 bg-navy-900 border-t border-gold-400/10 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-xs text-gold-400 font-serif tracking-[0.3em] uppercase block mb-3">Nos Piliers Éthiques</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-white">Valeurs & Vision</h2>
+                <div class="w-16 h-[1px] bg-gold-400 mx-auto mt-4"></div>
+            </div>
+
+            <!-- Grille de valeurs -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <div class="p-6 bg-navy-950/60 border border-slate-800 rounded hover:border-gold-400/40 transition-colors">
+                    <div class="text-gold-400 text-xl font-serif mb-4">I.</div>
+                    <h3 class="font-bold text-white text-sm mb-2">Confiance</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Construire et préserver des relations intergénérationnelles solides.</p>
+                </div>
+                <div class="p-6 bg-navy-950/60 border border-slate-800 rounded hover:border-gold-400/40 transition-colors">
+                    <div class="text-gold-400 text-xl font-serif mb-4">II.</div>
+                    <h3 class="font-bold text-white text-sm mb-2">Stabilité</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Assurer la pérennité totale des patrimoines à long terme.</p>
+                </div>
+                <div class="p-6 bg-navy-950/60 border border-slate-800 rounded hover:border-gold-400/40 transition-colors">
+                    <div class="text-gold-400 text-xl font-serif mb-4">III.</div>
+                    <h3 class="font-bold text-white text-sm mb-2">Excellence</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Pratiquer rigoureusement les plus hauts standards réglementaires et financiers.</p>
+                </div>
+                <div class="p-6 bg-navy-950/60 border border-slate-800 rounded hover:border-gold-400/40 transition-colors">
+                    <div class="text-gold-400 text-xl font-serif mb-4">IV.</div>
+                    <h3 class="font-bold text-white text-sm mb-2">Discrétion</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Assurer le secret le plus strict autour de vos affaires financières.</p>
+                </div>
+                <div class="p-6 bg-navy-950/60 border border-slate-800 rounded hover:border-gold-400/40 transition-colors col-span-2 sm:col-span-1">
+                    <div class="text-gold-400 text-xl font-serif mb-4">V.</div>
+                    <h3 class="font-bold text-white text-sm mb-2">Responsabilité</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Participer activement à la construction économique et morale du Royaume.</p>
+                </div>
+            </div>
+
+            <!-- Vision d'avenir -->
+            <div class="mt-16 p-8 bg-navy-950/80 rounded-lg text-center max-w-4xl mx-auto border border-gold-400/10">
+                <p class="text-xs text-gold-400 font-serif tracking-[0.25em] uppercase mb-4">La Vision d'Avenir</p>
+                <p class="text-sm md:text-base text-slate-300 leading-relaxed italic">
+                    « Faire de Black Reef la référence mondiale de la gestion patrimoniale, de la finance souveraine et de la confidentialité bancaire, tout en assurant la stabilité financière des générations futures. »
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIED DE PAGE SOLENNEL -->
+    <footer class="bg-navy-950 py-16 border-t border-gold-400/20 text-slate-500 text-xs relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-building-columns text-lg text-gold-400"></i>
+                        <span class="font-serif font-bold text-sm tracking-widest text-white">BRSB</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 leading-relaxed max-w-sm">
+                        La Black Reef Sovereign Bank (BRSB) s'impose comme un rempart d'intégrité, protégeant l'avenir de vos patrimoines grâce à un savoir-faire financier d'exception établi depuis 1848.
+                    </p>
+                    <p class="text-xs font-serif italic text-gold-400">
+                        « Votre patrimoine. Votre confiance. Votre avenir. »
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-serif text-white font-bold text-[11px] uppercase tracking-widest mb-4">Souveraineté</h4>
+                    <ul class="space-y-2 text-[11px] text-slate-400">
+                        <li><i class="fa-solid fa-shield text-gold-400/50 mr-2"></i> Charte de Confidentialité</li>
+                        <li><i class="fa-solid fa-lock text-gold-400/50 mr-2"></i> Haute Cour de Black Reef</li>
+                        <li><i class="fa-solid fa-building text-gold-400/50 mr-2"></i> Réglementation Royale</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif text-white font-bold text-[11px] uppercase tracking-widest mb-4">Infrastructures</h4>
+                    <ul class="space-y-2 text-[11px] text-slate-400">
+                        <li>Tour Souveraine HQ</li>
+                        <li>Salle des Marchés Centraux</li>
+                        <li>200+ Succursales Offshores</li>
+                        <li>Fondation BRSB</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-900 text-center space-y-4">
+                <p>&copy; 2026 Black Reef Sovereign Bank (BRSB). Tous droits réservés.</p>
+                <div class="max-w-2xl mx-auto text-[10px] text-slate-600 leading-relaxed bg-navy-900/60 p-4 rounded border border-slate-900">
+                    <p class="font-bold text-slate-500 uppercase tracking-wider mb-1">Avis de fiction légale</p>
+                    <p>La "Black Reef Sovereign Bank" (BRSB), ses actifs fictifs déclarés à hauteur de 14 500 milliards de Reefs, ses politiques de secret bancaire et l'intégralité des données géographiques ou historiques présentées sur cette page sont purement fictifs et créés dans un but d'immersion scénaristique. Aucune valeur contractuelle ou financière réelle n'y est associée.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script minimal d'interaction dynamique de l'en-tête -->
+    <script>
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                nav.classList.add('py-4', 'bg-navy-950/95', 'shadow-xl');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.add('py-6');
+                nav.classList.remove('py-4', 'bg-navy-950/95', 'shadow-xl');
+            }
+        });
+    </script>
+</body>
+</html>
